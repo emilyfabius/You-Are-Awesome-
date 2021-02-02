@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
 
     @IBAction func ShowAnotherMessage(_ sender: UIButton) {
-        print("👁The another message button was pressed")
+        print("👁The another message button was pressed ")
         messageLabel.text = "You are great!"
     }
 }
