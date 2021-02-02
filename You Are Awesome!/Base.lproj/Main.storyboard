@@ -24,11 +24,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcU-EJ-2Sn">
-                                <rect key="frame" x="135" y="145" width="104" height="30"/>
+                                <rect key="frame" x="16" y="146" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="messageButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sQp-KY-itt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIY-em-vOT">
+                                <rect key="frame" x="197" y="146" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Another Message"/>
+                                <connections>
+                                    <action selector="ShowAnotherMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6W1-Ov-YDL"/>
                                 </connections>
                             </button>
                         </subviews>
