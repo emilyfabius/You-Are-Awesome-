@@ -21,23 +21,25 @@ class ViewController: UIViewController {
 
 
     @IBAction func messageButtonPress(_ sender: UIButton) {
-        let inspiringMessages = ["You are an inspiration", "You are strong", "You can do anything"]
-        awesomeLabel.text = inspiringMessages[messageNum]
-        messageNum += 1
-        if messageNum == inspiringMessages.count{
-            messageNum = 0
-        }
+        let inspiringMessages = ["You are an inspiration", "You are strong", "You can do anything", "I'm proud of you", "You are coooooooooooooooooooool"]
+        awesomeLabel.text = inspiringMessages[Int.random(in: 1...inspiringMessages.count - 1)]
+//        awesomeLabel.text = inspiringMessages[messageNum]
+//        messageNum += 1
+//        if messageNum == inspiringMessages.count{
+//            messageNum = 0
+//        }
         
-        print(imageNum)
-        //let imageName = "image" + String(imageNum)
-        let imageName = "image\(imageNum)"
-        imageView.image = UIImage(named: imageName)
-        if imageNum <= 8 {
-            imageNum = imageNum + 1
-        }
-        else {
-            imageNum = 0
-        }
+        imageView.image = UIImage(named: "image\(Int.random(in: 0...9))")
+//        print(imageNum)
+//        //let imageName = "image" + String(imageNum)
+//        let imageName = "image\(imageNum)"
+//        imageView.image = UIImage(named: imageName)
+//        if imageNum <= 8 {
+//            imageNum = imageNum + 1
+//        }
+//        else {
+//            imageNum = 0
+//        }
         
         
         
