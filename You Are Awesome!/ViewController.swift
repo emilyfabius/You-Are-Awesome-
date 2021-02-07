@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var imageNum = 0
+    var messageNum = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,12 @@ class ViewController: UIViewController {
 
 
     @IBAction func messageButtonPress(_ sender: UIButton) {
+        let inspiringMessages = ["You are an inspiration", "You are strong", "You can do anything"]
+        awesomeLabel.text = inspiringMessages[messageNum]
+        messageNum += 1
+        if messageNum == inspiringMessages.count{
+            messageNum = 0
+        }
         
         print(imageNum)
         //let imageName = "image" + String(imageNum)
