@@ -23,20 +23,16 @@
                                 <color key="textColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UEa-bx-yU3">
+                                <rect key="frame" x="16" y="170" width="343" height="477"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcU-EJ-2Sn">
-                                <rect key="frame" x="16" y="146" width="104" height="30"/>
+                                <rect key="frame" x="135" y="132" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="messageButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sQp-KY-itt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIY-em-vOT">
-                                <rect key="frame" x="197" y="146" width="162" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show Another Message"/>
-                                <connections>
-                                    <action selector="ShowAnotherMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6W1-Ov-YDL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -44,12 +40,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="messageLabel" destination="JO9-aM-mQM" id="QsG-JY-A7s"/>
+                        <outlet property="awesomeLabel" destination="JO9-aM-mQM" id="xeX-l5-N6L"/>
+                        <outlet property="imageView" destination="UEa-bx-yU3" id="0N3-4n-2Xa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.25" y="79.225352112676063"/>
+            <point key="canvasLocation" x="-26.399999999999999" y="78.710644677661179"/>
         </scene>
     </scenes>
     <resources>
