@@ -6,57 +6,62 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     @IBOutlet weak var awesomeLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-    var imageNum = 0
-    var messageNum = 0
+    var messageNum = -1
+    var imageNum = -1
+    var totalImages = 9
+    var soundNum = -1
+    var totalSounds = 5
+    
+    var audioPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         awesomeLabel.text = ""
     }
-
+    
+    func playSound(audioName: String) {
+        if let sound = NSDataAsset(name: audioName){
+            do {
+                try audioPlayer = AVAudioPlayer(data: sound.data)
+                audioPlayer.play()
+            } catch {
+                print("ERROR: \(error.localizedDescription) Could not initialize AVAudioPlayer object")
+            }
+            
+        } else {
+            print("ERROR: Could not read data from file sound")
+        }
+    }
+    
+    func nonRepeatingRandom(originalNum: Int, upperBounds: Int) -> Int {
+        var randNum: Int
+        repeat {
+            randNum = Int.random(in: 0...upperBounds)
+        } while originalNum == randNum
+        
+        return randNum
+    }
 
     @IBAction func messageButtonPress(_ sender: UIButton) {
-        let inspiringMessages = ["You are an inspiration", "You are strong", "You can do anything", "I'm proud of you", "You are coooooooooooooooooooool"]
-        awesomeLabel.text = inspiringMessages[Int.random(in: 1...inspiringMessages.count - 1)]
-//        awesomeLabel.text = inspiringMessages[messageNum]
-//        messageNum += 1
-//        if messageNum == inspiringMessages.count{
-//            messageNum = 0
-//        }
+        let inspiringMessages = ["You are an inspiration",
+                                 "You are strong",
+                                 "You can do anything",
+                                 "I'm proud of you",
+                                 "You are coooooooooooooooooooool"]
         
-        imageView.image = UIImage(named: "image\(Int.random(in: 0...9))")
-//        print(imageNum)
-//        //let imageName = "image" + String(imageNum)
-//        let imageName = "image\(imageNum)"
-//        imageView.image = UIImage(named: imageName)
-//        if imageNum <= 8 {
-//            imageNum = imageNum + 1
-//        }
-//        else {
-//            imageNum = 0
-//        }
+        messageNum = nonRepeatingRandom(originalNum: messageNum, upperBounds: inspiringMessages.count - 1)
+        awesomeLabel.text = inspiringMessages[messageNum]
         
+        imageNum = nonRepeatingRandom(originalNum: imageNum, upperBounds: totalImages)
+        imageView.image = UIImage(named: "image\(imageNum)")
         
-        
-        //        let awesomeMessage = "You are awesome!"
-        //        let greatMessage = "You are great!"
-        //        let catMessage = "You are a cool cat!"
-        //
-        //        if awesomeLabel.text == awesomeMessage{
-        //            awesomeLabel.text = greatMessage
-        //            imageView.image = UIImage(named: "image1")
-        //        } else if awesomeLabel.text == greatMessage {
-        //            awesomeLabel.text = catMessage
-        //            imageView.image = UIImage(named: "image2")
-        //        } else {
-        //            awesomeLabel.text = awesomeMessage
-        //            imageView.image = UIImage(named: "image0")
-        //        }
-        
+        soundNum = nonRepeatingRandom(originalNum: soundNum, upperBounds: totalSounds)
+        playSound(audioName: "sound\(soundNum)")
     }
 }
